@@ -41,6 +41,10 @@ https://github.com/DeadfireKim/kimi-dev-framework
 
 또는 Kimi 설정 파일에 스킬을 등록하세요:
 
+**설정 파일 위치:**
+- Windows: `%USERPROFILE%\.config\agents\config.json`
+- Mac/Linux: `~/.config/agents/config.json`
+
 ```json
 {
   "skills": [

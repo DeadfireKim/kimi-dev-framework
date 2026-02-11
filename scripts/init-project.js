@@ -3,7 +3,7 @@
  * KDF Project Initializer v2.0
  * 새 프로젝트를 초기화하고 기본 구조를 생성합니다.
  * 
- * 사용법: node init-project.js {project-name} [--tier={lite|pro|scale}]
+ * 사용법: node init-project.js {project-name} [--tier={lite|basic|pro}]
  */
 
 const fs = require('fs');
@@ -19,23 +19,23 @@ const SUBDIRS = [
   'local'
 ];
 
-const VALID_TIERS = ['lite', 'pro', 'scale'];
+const VALID_TIERS = ['lite', 'basic', 'pro'];
 
 function printUsage() {
   console.log(`
 🚀 KDF Project Initializer v2.0
 
 Usage:
-  node init-project.js {project-name} [--tier={lite|pro|scale}]
+  node init-project.js {project-name} [--tier={lite|basic|pro}]
 
 Options:
-  --tier     Project tier (default: pro)
+  --tier     Project tier (default: basic)
              lite  : 가벼운 프로젝트 (정적 웹사이트 등)
-             pro   : 표준 애플리케이션 (기본값)
-             scale : 대규모 시스템 (마이크로서비스 등)
+             basic : 기본 애플리케이션 (기본값)
+             pro   : 대규모/엔터프라이즈 시스템 (마이크로서비스 등)
 
 Examples:
-  node init-project.js my-app --tier=pro
+  node init-project.js my-app --tier=basic
   node init-project.js portfolio --tier=lite
 `);
 }
@@ -43,7 +43,7 @@ Examples:
 function parseArgs(args) {
   const result = {
     projectName: null,
-    tier: 'pro'
+    tier: 'basic'
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -138,8 +138,8 @@ function createReadme(projectName, tier) {
 
   const tierNames = {
     lite: 'Lite (가벼운 프로젝트)',
-    pro: 'Pro (표준 애플리케이션)',
-    scale: 'Scale (대규모 시스템)'
+    basic: 'Basic (기본 애플리케이션)',
+    pro: 'Pro (대규모/엔터프라이즈 시스템)'
   };
 
   const content = `# KDF: ${projectName}
@@ -197,12 +197,12 @@ function suggestNextSteps(tier) {
       '/agile story hero-section',
       '/dev review --scope=file'
     ],
-    pro: [
+    basic: [
       '/pdca plan user-authentication',
       '/agile epic user-management',
       '/agile story login-with-email'
     ],
-    scale: [
+    pro: [
       '/dev arch api-gateway',
       '/pdca plan service-mesh',
       '/agile epic microservices-core'

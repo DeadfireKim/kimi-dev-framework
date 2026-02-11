@@ -67,7 +67,7 @@ function createPRD(featureName, options = {}) {
     FEATURE_NAME: featureName,
     DATE: getToday(),
     PROJECT_NAME: options.project || status?.project?.name || 'Unknown',
-    TIER: options.tier || status?.project?.tier || 'pro',
+    TIER: options.tier || status?.project?.tier || 'basic',
     STATUS: 'Draft'
   };
   
@@ -89,7 +89,7 @@ function createArchitecture(systemName, options = {}) {
   const variables = {
     SYSTEM_NAME: systemName,
     DATE: getToday(),
-    TIER: options.tier || status?.project?.tier || 'pro',
+    TIER: options.tier || status?.project?.tier || 'basic',
     STATUS: 'Draft'
   };
   

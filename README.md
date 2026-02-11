@@ -22,8 +22,8 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 | 티어 | 설명 | 기술 스택 예시 |
 |------|------|---------------|
 | **Lite** | 가벼운 프로젝트 | HTML, CSS, JS, 정적 사이트 생성기 |
-| **Pro** | 표준 애플리케이션 | Next.js, React, Node.js, BaaS |
-| **Scale** | 대규모 시스템 | K8s, Terraform, MSA, 이벤트 기반 |
+| **Basic** | 기본 애플리케이션 | Next.js, React, Node.js, BaaS |
+| **Pro** | 대규모/엔터프라이즈 시스템 | K8s, Terraform, MSA, 이벤트 기반 |
 
 ---
 
@@ -48,7 +48,7 @@ Kimi Code CLI에서 `/skill:kdf` 접두사를 붙여 명령어를 실행합니�
 
 ```bash
 # 새 프로젝트 시작
-/skill:kdf /dev start my-project --tier=pro
+/skill:kdf /dev start my-project --tier=basic
 ```
 
 ---
@@ -167,7 +167,7 @@ KDF는 품질 중심의 자동 개선 사이클을 제공합니다:
 
 ```bash
 # 1. 프로젝트 초기화
-/skill:kdf /dev start my-saas --tier=pro
+/skill:kdf /dev start my-saas --tier=basic
 
 # 2. PDCA: Plan
 /skill:kdf /pdca plan subscription-system
@@ -231,7 +231,7 @@ KDF는 품질 중심의 자동 개선 사이클을 제공합니다:
 
 ```bash
 # 프로젝트 초기화
-node scripts/init-project.js my-app --tier=pro
+node scripts/init-project.js my-app --tier=basic
 
 # 상태 확인
 node scripts/status-manager.js get

@@ -1,6 +1,6 @@
 ---
-name: kimi-dev-framework
-description: AI-Native 개발 프레임워크. Plan-Do-Check-Act 사이클 기반의 구조화된 개발 워크플로우, 자동 문서화, 품질 중심 개선 루프를 제공합니다. /pdca 명령어로 계획-실행-점검-개선 사이클을, /dev 명령어로 개발 라이프사이클을, /agile 명령어로 애자일 워크플로우를 관리합니다.
+name: kdf
+description: AI-Native 개발 프레임워크. Plan-Do-Check-Act 사이클 기반의 구조화된 개발 워크플로우, 자동 문서화, 품질 중심 개선 루프를 제공합니다. /skill:kdf /pdca 명령어로 계획-실행-점검-개선 사이클을, /skill:kdf /dev 명령어로 개발 라이프사이클을, /skill:kdf /agile 명령어로 애자일 워크플로우를 관리합니다.
 ---
 
 # Kimi Dev Framework (KDF)
@@ -50,13 +50,13 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ## 🎯 명령어 레퍼런스
 
-### PDCA 사이클 (`/pdca`)
+### PDCA 사이클 (`/skill:kdf /pdca`)
 
-#### `/pdca plan {feature}`
+#### `/skill:kdf /pdca plan {feature}`
 **목적**: 기능의 계획 수립 및 요구사항 분석
 
 **실행 단계**:
-1. 프로젝트 루트에 `.kdf/` 디렉토리가 없으면 `/dev start`를 먼저 실행하도록 안내
+1. 프로젝트 루트에 `.kdf/` 디렉토리가 없으면 `/skill:kdf /dev start`를 먼저 실행하도록 안내
 2. `{feature}` 이름으로 PRD 문서 초안 생성 (`.kdf/active/prd-{feature}.md`)
 3. 사용자와 함께 PRD 검토 및 보완
 4. 필요시 아키텍처 문서 초안 생성
@@ -70,26 +70,26 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/pdca do {feature}`
+#### `/skill:kdf /pdca do {feature}`
 **목적**: 계획된 기능의 구현 실행
 
 **실행 단계**:
 1. `status.json` 확인 - 현재 PDCA stage가 "plan" 완료 상태인지 검증
 2. PRD 문서 읽기
 3. 백로그의 스토리 목록 확인
-4. `/agile story` 명령어로 각 스토리 구현 진행
+4. `/skill:kdf /agile story` 명령어로 각 스토리 구현 진행
 5. 각 스토리 완료시 체크리스트 업데이트
 6. `status.json` 업데이트: `pdca.stage` = "do"
 
 ---
 
-#### `/pdca check {feature}`
+#### `/skill:kdf /pdca check {feature}`
 **목적**: 구현 결과의 품질 검증 및 평가
 
 **실행 단계**:
 1. 구현된 코드 전체 검토
 2. 테스트 실행 및 커버리지 확인
-3. `/dev review` 실행 - 코드 리뷰 수행
+3. `/skill:kdf /dev review` 실행 - 코드 리뷰 수행
 4. 품질 메트릭 수집 및 점수 계산 (0-100%)
 5. 품질 보고서 생성
 6. `status.json` 업데이트: `pdca.stage` = "check"
@@ -106,23 +106,23 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/pdca act {feature}`
+#### `/skill:kdf /pdca act {feature}`
 **목적**: 점검 결과를 바탕으로 개선 및 표준화
 
 **실행 단계**:
 1. 품질 보고서 검토
 2. 개선사항 우선순위 정렬 (P0/P1/P2/P3)
 3. 개선 작업 수행
-4. 개선 완료 후 자동으로 `/pdca check` 재실행
+4. 개선 완료 후 자동으로 `/skill:kdf /pdca check` 재실행
 5. 반복 횟수 증가
 
 **Quality-First 개선 루프**:
 ```
-/pdca check → 품질 평가 (점수 < 90%?)
+/skill:kdf /pdca check → 품질 평가 (점수 < 90%?)
      ↓ Yes
-/pdca act → 개선 실행
+/skill:kdf /pdca act → 개선 실행
      ↓
-/pdca check → 재평가 (반복, 최대 5회)
+/skill:kdf /pdca check → 재평가 (반복, 최대 5회)
      ↓ No (점수 >= 90%)
 완료! 🎉
 ```
@@ -134,7 +134,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/pdca status`
+#### `/skill:kdf /pdca status`
 **목적**: 현재 PDCA 및 프로젝트 상태 확인
 
 **출력 내용**:
@@ -146,7 +146,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/pdca next`
+#### `/skill:kdf /pdca next`
 **목적**: 다음 단계 안내 및 자동 전환
 
 **단계 전이**:
@@ -158,9 +158,9 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-### 개발 워크플로우 (`/dev`)
+### 개발 워크플로우 (`/skill:kdf /dev`)
 
-#### `/dev start {project} [--tier={tier}]`
+#### `/skill:kdf /dev start {project} [--tier={tier}]`
 **목적**: 새 프로젝트 초기화
 
 **실행 단계**:
@@ -185,7 +185,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/dev spec {feature}`
+#### `/skill:kdf /dev spec {feature}`
 **목적**: 간결한 기술 명세서 작성 (Lite 티어용)
 
 **실행 단계**:
@@ -195,7 +195,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/dev review [--scope={scope}] [--focus={focus}]`
+#### `/skill:kdf /dev review [--scope={scope}] [--focus={focus}]`
 **목적**: 코드 리뷰 수행
 
 **스코프 옵션**:
@@ -215,7 +215,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/dev retro [--sprint={sprint}]`
+#### `/skill:kdf /dev retro [--sprint={sprint}]`
 **목적**: 스프린트 회고 진행
 
 **회고 템플릿 (KPT)**:
@@ -228,7 +228,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/dev arch {system}`
+#### `/skill:kdf /dev arch {system}`
 **목적**: 아키텍처 설계 문서 작성
 
 **실행 단계**:
@@ -239,9 +239,9 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-### Agile 워크플로우 (`/agile`)
+### Agile 워크플로우 (`/skill:kdf /agile`)
 
-#### `/agile epic {title}`
+#### `/skill:kdf /agile epic {title}`
 **목적**: 에픽 생성 및 관리
 
 **에픽 구성요소**:
@@ -254,7 +254,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/agile story {title} [--epic={epic}] [--points={points}]`
+#### `/skill:kdf /agile story {title} [--epic={epic}] [--points={points}]`
 **목적**: 사용자 스토리 생성 및 구현
 
 **INVEST 원칙**:
@@ -277,18 +277,18 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/agile task {story} {task-description}`
+#### `/skill:kdf /agile task {story} {task-description}`
 **목적**: 스토리를 구체적인 태스크로 분할
 
 **사용 예시**:
 ```
-/agile task story-1234567890 "Create database schema"
-/agile task story-1234567890 "Implement API endpoint"
+/skill:kdf /agile task story-1234567890 "Create database schema"
+/skill:kdf /agile task story-1234567890 "Implement API endpoint"
 ```
 
 ---
 
-#### `/agile sprint plan [--duration={weeks}] [--goal={goal}]`
+#### `/skill:kdf /agile sprint plan [--duration={weeks}] [--goal={goal}]`
 **목적**: 스프린트 계획
 
 **고려사항**:
@@ -299,7 +299,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/agile sprint start`
+#### `/skill:kdf /agile sprint start`
 **목적**: 스프린트 시작
 
 **실행 단계**:
@@ -309,13 +309,13 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ---
 
-#### `/agile sprint end`
+#### `/skill:kdf /agile sprint end`
 **목적**: 스프린트 종료
 
 **실행 단계**:
 1. 완료된 스토리 통계
 2. 미완료 스토리 백로그로 이동
-3. `/dev retro` 실행 권고
+3. `/skill:kdf /dev retro` 실행 권고
 
 ---
 
@@ -363,51 +363,51 @@ KDF는 `.kdf/status.json`으로 모든 상태를 추적합니다:
 ### 시나리오 1: 신규 기능 개발
 
 ```
-/dev start my-saas --tier=pro
-/pdca plan subscription-system
+/skill:kdf /dev start my-saas --tier=pro
+/skill:kdf /pdca plan subscription-system
     → PRD 작성
     → 아키텍처 설계
     → 스토리 분할
 
-/pdca do subscription-system
-    → /agile story create-subscription
-    → /agile story update-subscription
+/skill:kdf /pdca do subscription-system
+    → /skill:kdf /agile story create-subscription
+    → /skill:kdf /agile story update-subscription
 
-/pdca check subscription-system
+/skill:kdf /pdca check subscription-system
     → 코드 리뷰
     → 테스트 실행 (커버리지 75%)
     → 품질 점수: 85%
 
-/pdca act subscription-system
+/skill:kdf /pdca act subscription-system
     → 테스트 추가 (커버리지 85%로 개선)
-    → /pdca check (재실행)
+    → /skill:kdf /pdca check (재실행)
     → 품질 점수: 93%
 
-/pdca next
+/skill:kdf /pdca next
     → Complete! 🎉
 ```
 
 ### 시나리오 2: 스프린트 기반 개발
 
 ```
-/agile sprint plan --duration=2 --goal="결제 기능 완료"
-/agile sprint start
+/skill:kdf /agile sprint plan --duration=2 --goal="결제 기능 완료"
+/skill:kdf /agile sprint start
 
-/agile story payment-integration
-/agile story payment-history
-/agile story refund
+/skill:kdf /agile story payment-integration
+/skill:kdf /agile story payment-history
+/skill:kdf /agile story refund
 
-/agile sprint end
-/dev retro
+/skill:kdf /agile sprint end
+/skill:kdf /dev retro
 ```
 
 ### 시나리오 3: 빠른 버그 수정
 
 ```
-/dev spec fix-login-error
+/skill:kdf /dev spec fix-login-error
     → 간결한 명세
     → 코드 수정
-/dev review --scope=file
+/skill:kdf /dev review --scope=file
     → 리뷰 완료
 ```
 

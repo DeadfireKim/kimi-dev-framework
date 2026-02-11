@@ -42,48 +42,50 @@ Copy-Item -Recurse -Path "kimi-dev-framework" -Destination "$env:USERPROFILE\.co
 cp -r kimi-dev-framework ~/.config/agents/skills/
 ```
 
-### 프로젝트 초기화
+### 사용 방법
+
+Kimi Code CLI에서 `/skill:kdf` 접두사를 붙여 명령어를 실행합니다.
 
 ```bash
 # 새 프로젝트 시작
-/dev start my-project --tier=pro
+/skill:kdf /dev start my-project --tier=pro
 ```
 
 ---
 
 ## 📚 주요 명령어
 
-### 🎯 PDCA 사이클 (`/pdca`)
+### 🎯 PDCA 사이클 (`/skill:kdf /pdca`)
 
 | 명령어 | 설명 | 예시 |
 |--------|------|------|
-| `/pdca plan {feature}` | 계획 수립 및 요구사항 분석 | `/pdca plan payment-system` |
-| `/pdca do {feature}` | 구현 실행 | `/pdca do payment-system` |
-| `/pdca check {feature}` | 품질 검증 및 리뷰 | `/pdca check payment-system` |
-| `/pdca act {feature}` | 개선 및 리팩토링 | `/pdca act payment-system` |
-| `/pdca status` | 현재 상태 확인 | `/pdca status` |
-| `/pdca next` | 다음 단계 안내 및 실행 | `/pdca next` |
+| `/skill:kdf /pdca plan {feature}` | 계획 수립 및 요구사항 분석 | `/skill:kdf /pdca plan payment-system` |
+| `/skill:kdf /pdca do {feature}` | 구현 실행 | `/skill:kdf /pdca do payment-system` |
+| `/skill:kdf /pdca check {feature}` | 품질 검증 및 리뷰 | `/skill:kdf /pdca check payment-system` |
+| `/skill:kdf /pdca act {feature}` | 개선 및 리팩토링 | `/skill:kdf /pdca act payment-system` |
+| `/skill:kdf /pdca status` | 현재 상태 확인 | `/skill:kdf /pdca status` |
+| `/skill:kdf /pdca next` | 다음 단계 안내 및 실행 | `/skill:kdf /pdca next` |
 
-### 🚀 개발 워크플로우 (`/dev`)
-
-| 명령어 | 설명 | 예시 |
-|--------|------|------|
-| `/dev start {project}` | 새 프로젝트 초기화 | `/dev start my-app` |
-| `/dev spec {feature}` | 간결한 기술 명세서 | `/dev spec fix-login` |
-| `/dev arch {system}` | 아키텍처 설계 문서 | `/dev arch api-gateway` |
-| `/dev review` | 코드 리뷰 수행 | `/dev review --scope=feature` |
-| `/dev retro` | 회고 진행 | `/dev retro --sprint=sprint-1` |
-
-### 📋 Agile 워크플로우 (`/agile`)
+### 🚀 개발 워크플로우 (`/skill:kdf /dev`)
 
 | 명령어 | 설명 | 예시 |
 |--------|------|------|
-| `/agile epic {title}` | 에픽 생성 | `/agile epic user-management` |
-| `/agile story {title}` | 스토리 생성 및 구현 | `/agile story login-with-email` |
-| `/agile task {story} {task}` | 태스크 분할 | `/agile task story-123 "Create DB"` |
-| `/agile sprint plan` | 스프린트 계획 | `/agile sprint plan --duration=2` |
-| `/agile sprint start` | 스프린트 시작 | `/agile sprint start` |
-| `/agile sprint end` | 스프린트 종료 | `/agile sprint end` |
+| `/skill:kdf /dev start {project}` | 새 프로젝트 초기화 | `/skill:kdf /dev start my-app` |
+| `/skill:kdf /dev spec {feature}` | 간결한 기술 명세서 | `/skill:kdf /dev spec fix-login` |
+| `/skill:kdf /dev arch {system}` | 아키텍처 설계 문서 | `/skill:kdf /dev arch api-gateway` |
+| `/skill:kdf /dev review` | 코드 리뷰 수행 | `/skill:kdf /dev review --scope=feature` |
+| `/skill:kdf /dev retro` | 회고 진행 | `/skill:kdf /dev retro --sprint=sprint-1` |
+
+### 📋 Agile 워크플로우 (`/skill:kdf /agile`)
+
+| 명령어 | 설명 | 예시 |
+|--------|------|------|
+| `/skill:kdf /agile epic {title}` | 에픽 생성 | `/skill:kdf /agile epic user-management` |
+| `/skill:kdf /agile story {title}` | 스토리 생성 및 구현 | `/skill:kdf /agile story login-with-email` |
+| `/skill:kdf /agile task {story} {task}` | 태스크 분할 | `/skill:kdf /agile task story-123 "Create DB"` |
+| `/skill:kdf /agile sprint plan` | 스프린트 계획 | `/skill:kdf /agile sprint plan --duration=2` |
+| `/skill:kdf /agile sprint start` | 스프린트 시작 | `/skill:kdf /agile sprint start` |
+| `/skill:kdf /agile sprint end` | 스프린트 종료 | `/skill:kdf /agile sprint end` |
 
 ---
 
@@ -117,9 +119,9 @@ KDF를 사용하면 다음과 같은 구조가 자동 생성됩니다:
 KDF는 품질 중심의 자동 개선 사이클을 제공합니다:
 
 ```
-/pdca check → 품질 평가 (점수 < 90%?)
+/skill:kdf /pdca check → 품질 평가 (점수 < 90%?)
      ↓ Yes
-/pdca act → 개선 실행 → 재평가 (최대 5회)
+/skill:kdf /pdca act → 개선 실행 → 재평가 (최대 5회)
      ↓ No (점수 >= 90%)
 완료! 🎉
 ```
@@ -165,60 +167,60 @@ KDF는 품질 중심의 자동 개선 사이클을 제공합니다:
 
 ```bash
 # 1. 프로젝트 초기화
-/dev start my-saas --tier=pro
+/skill:kdf /dev start my-saas --tier=pro
 
 # 2. PDCA: Plan
-/pdca plan subscription-system
+/skill:kdf /pdca plan subscription-system
 # → PRD 작성
 # → 아키텍처 설계
 
 # 3. PDCA: Do
-/pdca do subscription-system
-# → /agile story create-subscription
-# → /agile story update-subscription
+/skill:kdf /pdca do subscription-system
+# → /skill:kdf /agile story create-subscription
+# → /skill:kdf /agile story update-subscription
 
 # 4. PDCA: Check
-/pdca check subscription-system
+/skill:kdf /pdca check subscription-system
 # → 코드 리뷰
 # → 테스트 실행
 
 # 5. PDCA: Act (품질 < 90%인 경우)
-/pdca act subscription-system
+/skill:kdf /pdca act subscription-system
 # → 개선사항 반영
 
 # 6. 완료
-/pdca next
+/skill:kdf /pdca next
 ```
 
 ### 시나리오 2: 스프린트 기반 개발
 
 ```bash
 # 스프린트 계획
-/agile sprint plan --duration=2 --goal="결제 기능 완료"
+/skill:kdf /agile sprint plan --duration=2 --goal="결제 기능 완료"
 
 # 스프린트 시작
-/agile sprint start
+/skill:kdf /agile sprint start
 
 # 스토리 구현
-/agile story payment-integration
-/agile story payment-history
-/agile story refund
+/skill:kdf /agile story payment-integration
+/skill:kdf /agile story payment-history
+/skill:kdf /agile story refund
 
 # 스프린트 종료 및 회고
-/agile sprint end
-/dev retro
+/skill:kdf /agile sprint end
+/skill:kdf /dev retro
 ```
 
 ### 시나리오 3: 빠른 버그 수정
 
 ```bash
 # 간결한 명세
-/dev spec fix-login-error
+/skill:kdf /dev spec fix-login-error
 
 # 코드 수정...
 
 # 리뷰
-/dev review --scope=file
+/skill:kdf /dev review --scope=file
 ```
 
 ---

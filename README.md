@@ -165,7 +165,7 @@ KDF는 품질 중심의 자동 개선 사이클을 제공합니다:
 
 ### 시나리오 1: 신규 프로젝트
 
-```bash
+```text
 # 1. 프로젝트 초기화
 /skill:kdf /dev start my-saas --tier=basic
 

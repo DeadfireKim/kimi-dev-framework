@@ -1,4 +1,4 @@
-# Kimi Dev Framework (KDF) v2.0
+# Kimi Dev Framework (KDF) v1.0
 
 **AI-Native 개발을 위한 구조화된 프레임워크**
 

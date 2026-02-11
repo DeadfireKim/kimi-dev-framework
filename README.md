@@ -31,6 +31,29 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 ### 설치
 
+#### 방법 1: Kimi CLI에서 직접 설치 (권장)
+
+Kimi Code CLI 환경에서는 GitHub URL만 입력하면 자동으로 설치됩니다:
+
+```
+https://github.com/DeadfireKim/kimi-dev-framework
+```
+
+또는 Kimi 설정 파일에 스킬을 등록하세요:
+
+```json
+{
+  "skills": [
+    {
+      "name": "kdf",
+      "url": "https://github.com/DeadfireKim/kimi-dev-framework"
+    }
+  ]
+}
+```
+
+#### 방법 2: 수동 설치
+
 ```bash
 # 1. 저장소 클론
 git clone https://github.com/DeadfireKim/kimi-dev-framework.git
@@ -44,7 +67,7 @@ cp -r kimi-dev-framework ~/.config/agents/skills/
 
 ### 사용 방법
 
-Kimi Code CLI에서 `/skill:kdf` 접두사를 붙여 명령어를 실행합니다.
+설치가 완료되면 Kimi Code CLI에서 `/skill:kdf` 접두사를 붙여 명령어를 실행합니다:
 
 ```bash
 # 새 프로젝트 시작

@@ -33,7 +33,7 @@ PDCA(Plan-Do-Check-Act) 방법론과 현대적 개발 워크플로우를 결합�
 
 #### 방법 1: Kimi CLI에서 직접 설치 (권장)
 
-Kimi Code CLI 환경에서는 GitHub URL만 입력하면 자동으로 설치됩니다:
+Kimi Code CLI 환경에서 GitHub URL을 붙여넣으면 이후 Kimi가 설치를 안내해 줍니다.
 
 ```
 https://github.com/DeadfireKim/kimi-dev-framework
